@@ -1,0 +1,17 @@
+Recorded learner-supplied evidence; not independently rerun.
+Summary columns: Group, Port-channel, Protocol, Ports.
+
+S2 after configuration:
+1      Po1(SU)      LACP      Gig0/1(P) Gig0/2(P)
+
+S1 with one member shut down:
+1      Po1(SU)      LACP      Gig0/1(D) Gig0/2(P)
+
+S1 after restoring member:
+1      Po1(SU)      LACP      Gig0/1(P) Gig0/2(P)
+
+Baseline PC1 -> 192.168.50.12: 4/4 replies, 0% loss; min/max/avg 0/1/0 ms.
+After EtherChannel formed: successful ping reported (full output not supplied).
+With S1 G0/1 shut down: 4/4 replies, 0% loss; min/max/avg 0/7/1 ms, TTL 128.
+After restoring S1 G0/1: both ports rejoined, as shown by the final S1 summary.
+A separate post-restoration ping was not supplied.

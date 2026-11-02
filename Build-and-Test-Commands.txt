@@ -1,0 +1,30 @@
+REFERENCE: apply the following on BOTH switches (S1 and S2).
+enable
+configure terminal
+interface range g0/1 - 2
+switchport mode trunk
+channel-group 1 mode active
+end
+show etherchannel summary
+
+PC1: 192.168.50.11 / 255.255.255.0
+PC2: 192.168.50.12 / 255.255.255.0
+No gateway or DNS required for this same-subnet test.
+PC1 command: ping 192.168.50.12
+
+Disable one member on S1:
+configure terminal
+interface g0/1
+shutdown
+end
+show etherchannel summary
+
+Repeat PC1 ping. Restore on S1:
+configure terminal
+interface g0/1
+no shutdown
+end
+show etherchannel summary
+
+Save BOTH switches: copy running-config startup-config
+Save Packet Tracer: Ctrl+S

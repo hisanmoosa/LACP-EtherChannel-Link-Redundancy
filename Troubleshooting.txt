@@ -1,0 +1,3 @@
+Actual issue: S1 initially showed Po1(SD), with G0/1(I) and G0/2(I). S2 showed zero channel-groups. After the learner applied matching LACP active and trunk configuration to S2, the channel formed.
+During formation, S2 temporarily reported that LACP was not enabled on the remote ports. Subsequent output showed Port-channel1 up and both members bundled. No persistent mismatch is claimed.
+An invalid-input marker preceded one successful command; the preceding invalid command was not supplied.
